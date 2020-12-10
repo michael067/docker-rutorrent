@@ -14,7 +14,7 @@ RUN apt-get update && apt-get install -y git && \
     git clone https://github.com/Novik/ruTorrent.git rutorrent && \
     cd /var/www/rutorrent/plugins && \
     git clone https://github.com/nelu/rutorrent-filemanager.git filemanager && \
-    git clone https://github.com/nelu/rutorrent-filemanager-share.git fileshare && \
+    git clone https://github.com/nelu/rutorrent-filemanager-share.git filemanager-share && \
     rm -rf ./rutorrent/.git* && cd / && \
     cp ./a/config.php /var/www/rutorrent/conf/ && \
     cp ./a/startup-rtorrent.sh ./a/startup-nginx.sh ./a/startup-php.sh ./a/startup-irssi.sh ./a/.rtorrent.rc /root/ && \
