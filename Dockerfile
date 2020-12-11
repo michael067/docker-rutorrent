@@ -5,7 +5,7 @@ RUN apt-get update && apt-get install -y git && \
     git clone https://github.com/michael067/rtorrent-rutorrent-shared.git a && \
     cp ./a/extra.list /etc/apt/sources.list.d/extra.list && \
     apt-get update && \
-    DEBIAN_FRONTEND=noninteractive apt-get install -y vim net-tools rtorrent unzip zip unrar rar tar bzip2 plowup mediainfo curl php-fpm php-cli php-geoip php-mbstring php-zip nginx wget ffmpeg supervisor php-xml libarchive-zip-perl libjson-perl libxml-libxml-perl irssi sox python3 python3-pip && \
+    DEBIAN_FRONTEND=noninteractive apt-get install -y vim net-tools rtorrent unzip zip unrar rar tar bzip2 plowshare mediainfo curl php-fpm php-cli php-geoip php-mbstring php-zip nginx wget ffmpeg supervisor php-xml libarchive-zip-perl libjson-perl libxml-libxml-perl irssi sox python3 python3-pip && \
     update-alternatives --install /usr/bin/python python /usr/bin/python3 1 && \
     pip3 install cloudscraper && \ 
     rm -rf /var/lib/apt/lists/* && \
