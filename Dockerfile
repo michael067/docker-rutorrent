@@ -20,6 +20,10 @@ RUN apt-get update && apt-get install -y git && \
     cp ./a/config.php /var/www/rutorrent/conf/ && \
     cp ./a/startup-rtorrent.sh ./a/startup-nginx.sh ./a/startup-php.sh ./a/startup-irssi.sh ./a/.rtorrent.rc /root/ && \
     cp ./a/supervisord.conf /etc/supervisor/conf.d/ && \
+    mkdir -p /home/rtorrent/.config/plowshare/modules.d && \
+    cd /home/rtorrent/.config/plowshare/modules.d && \
+    curl -L -k https://github.com/mcrapet/plowshare-modules-legacy/archive/master.tar.gz | tar zxf - && \
+    mv plowshare-modules-legacy-master legacy && \
     sed -i 's/\/var\/log/\/downloads\/\.log/g' /etc/nginx/nginx.conf && \
     sed -i 's/vps.mydomain.com/vps.mydomain.ml\/rutorrent/g' /var/www/rutorrent/plugins/fileshare/conf.php
 
