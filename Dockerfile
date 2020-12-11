@@ -20,7 +20,8 @@ RUN apt-get update && apt-get install -y git && \
     cp ./a/config.php /var/www/rutorrent/conf/ && \
     cp ./a/startup-rtorrent.sh ./a/startup-nginx.sh ./a/startup-php.sh ./a/startup-irssi.sh ./a/.rtorrent.rc /root/ && \
     cp ./a/supervisord.conf /etc/supervisor/conf.d/ && \
-    sed -i 's/\/var\/log/\/downloads\/\.log/g' /etc/nginx/nginx.conf
+    sed -i 's/\/var\/log/\/downloads\/\.log/g' /etc/nginx/nginx.conf && \
+    sed -i 's/vps.mydomain.com/vps.mydomain.ml\/rutorrent/g' /var/www/rutorrent/plugins/fileshare/conf.php
 
 EXPOSE 80 443 49160 49161 5000
 VOLUME /downloads
